@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-df = pd.read_csv('attrition.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/ZachDougherty/msds699-final/master/data/attrition.csv')
 
 y = df.Attrition.values
 X = df.drop([
@@ -22,7 +22,7 @@ X_train, X_test, y_train, y_test = \
 	train_test_split(X, y, train_size=0.8)
 
 X_train.insert(X.shape[1], 'Attrition', y_train)
-X_train.to_csv('attrition_train.csv')
+X_train.to_csv('data/attrition_train.csv')
 
 X_test.insert(X.shape[1], 'Attrition', y_test)
-X_test.to_csv('attrition_test.csv')
+X_test.to_csv('data/attrition_test.csv')
